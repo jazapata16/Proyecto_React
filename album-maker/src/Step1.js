@@ -41,8 +41,10 @@ function Step1() {
 
   };
 
-  const handleDeletePhoto = (id) => {
-    dispatch({ type: 'DELETE_PHOTO', payload: id });
+    const handleDeletePhoto = (index) => {
+    const updatedPhotos = [...selectedPhotos];
+    updatedPhotos.splice(index, 1);
+    setSelectedPhotos(updatedPhotos);
   };
 
   return (
@@ -54,6 +56,7 @@ function Step1() {
         style={{ border: '1px solid black', minHeight: '200px' }}
       >
         {selectedPhotos.map((photo, index) => (
+          <div>
           <img className='photo-preview '
             key={index}
             src={URL.createObjectURL(photo)}
@@ -62,6 +65,11 @@ function Step1() {
             draggable
             onDragStart={(event) => handlePhotoDragStart(event, index)}
             onDragEnd={handlePhotoDragEnd}/>
+
+          <div className='delete-photo' onClick={() => handleDeletePhoto(index)}>
+          <button>Delete</button>
+          </div>
+          </div>
 
             
         ))}
