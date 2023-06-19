@@ -7,11 +7,9 @@ function Step3() {
   const dispatch = useContext(AppDispatchContext);
 
   const handleFinishOrder = () => {
-    // Guardar los datos en el estado o realizar otras acciones necesarias
-    // ...
+    //"Gracias por tu compra"
+    console.log("Gracias por tu compra");
 
-    // Mostrar el mensaje "Gracias por tu compra"
-    // ...
   };
 
   const handleGoBack = () => {
@@ -34,21 +32,18 @@ function Step3() {
           />
         ))}
       </div>
-      {/* Mostrar la vista previa del álbum */}
 
       <h3 className='order-summary-heading'>Datos de facturación</h3>
       <p className='order-summary-info '>Nombre: {state.billingInfo.name}</p>
       <p className='order-summary-info '>Dirección: {state.billingInfo.address}</p>
       <p className='order-summary-info '>Ciudad: {state.billingInfo.city}</p>
       <p className='order-summary-info '>País: {state.billingInfo.country}</p>
-      {/* Mostrar el resto de la información de facturación */}
 
       <h3 className='order-summary-heading'>Datos de envío</h3>
       <p className='order-summary-info '>Nombre: {state.shippingInfo.name}</p>
       <p className='order-summary-info '>Dirección: {state.shippingInfo.address}</p>
       <p className='order-summary-info '>Ciudad: {state.shippingInfo.city}</p>
       <p className='order-summary-info '>País: {state.shippingInfo.country}</p>
-      {/* Mostrar el resto de la información de envío */}
 
       <button className="button-back" onClick={handleGoBack}> Regresar </button>
       <button className="finish-button" onClick={handleFinishOrder}>Finalizar pedido</button>

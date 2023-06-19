@@ -22,7 +22,6 @@ function Step1() {
   };
 
   const handlePhotoDragEnd = () => {
-    // Clean up any dragged photo styling, if necessary
   };
 
   const handlePhotoDropOnGrid = (event) => {
@@ -39,29 +38,34 @@ function Step1() {
     dispatch({ type: 'ADD_PHOTOS', payload: selectedPhotos });
     const nextStep = state.currentStep + 1;
     dispatch({ type: 'SET_CURRENT_STEP', payload: nextStep });
-    // Proceed to the next step
-    // ...
+
+  };
+
+  const handleDeletePhoto = (id) => {
+    dispatch({ type: 'DELETE_PHOTO', payload: id });
   };
 
   return (
-    <div>
+    <div className='step1-container'>
       <h2>Organización de imágenes</h2>
-      <div
+      <div className='photo-drop-area'
         onDragOver={handlePhotoDragOver}
         onDrop={handlePhotoDrop}
         style={{ border: '1px solid black', minHeight: '200px' }}
       >
         {selectedPhotos.map((photo, index) => (
-          <img
+          <img className='photo-preview '
             key={index}
             src={URL.createObjectURL(photo)}
             alt={photo.name}
             style={{ width: '100px', height: '100px', objectFit: 'cover' }}
             draggable
             onDragStart={(event) => handlePhotoDragStart(event, index)}
-            onDragEnd={handlePhotoDragEnd}
-          />
+            onDragEnd={handlePhotoDragEnd}/>
+
+            
         ))}
+        
       </div>
       <div
         onDragOver={handlePhotoDragOver}
