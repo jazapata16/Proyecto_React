@@ -3,6 +3,7 @@
 Este proyecto es una aplicación web que permite crear álbumes personalizados. 
 Los usuarios pueden seleccionar fotos, para crear su propio álbum digital. 
 Esta solución está diseñada para ofrecer una experiencia fácil de usar y personalizable para la creación de álbumes fotográficos.
+Nota(Para cambiar de posicion las imagenes arrastrar la foto al cuadro numerado con la posicion en la que la quiere colocar) los cuadros numerados apareceran debajo de el panel de fotos cada vez que agregues una foto nueva.
 
 ## Desarrollo
 
